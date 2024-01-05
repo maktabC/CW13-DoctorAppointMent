@@ -1,19 +1,19 @@
 ﻿using cw12.DataBase;
 using Microsoft.AspNetCore.Mvc;
 
-namespace cw12.Controllers
-{
-    public class PatientController : Controller
-    {
-        public IActionResult GetAllReservation()
-        {
-            return View();
-        }
+namespace cw12.Controllers;
 
-        public IActionResult SearchByCategory(int categoryId)
-        {
-            var getReserve = Tempdatabase.reservations.Where(r => r.Doctor.Skill.Id == categoryId).ToList();
-            return View();
-        }
+public class PatientController : Controller
+{
+    public IActionResult GetAllReservation()
+    {
+        return View();
+    }
+   // [HttpPost]
+    public IActionResult SearchByCategory([FromQuery]int categoryId=100)
+    {
+        ViewData["Categories"] = Tempdatabase.Sickness;
+        var reservationList = Tempdatabase.reservations.Where(r => r.Doctor.Skill.Id == categoryId).ToList();
+        return View(reservationList);
     }
 }

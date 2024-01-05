@@ -11,5 +11,24 @@ namespace cw12.DataBase
         };
 
         public static List<Reservation> reservations = new List<Reservation>();
+
+        public static List<Sickness> Sickness = new List<Sickness>()
+        {
+            new Sickness()
+            {
+                Id=100,
+                Name="Maghzo asab "
+            },
+             new Sickness()
+            {
+                Id=101,
+                Name="goosh halgh bini"
+            },
+              new Sickness()
+            {
+                Id=103,
+                Name="ghalb"
+            }
+        };      
     }
 }
