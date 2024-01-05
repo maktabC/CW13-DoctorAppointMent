@@ -9,7 +9,8 @@ public class PatientController : Controller
     {
         return View();
     }
-   // [HttpPost]
+
+
     public IActionResult SearchByCategory([FromQuery]int categoryId=100)
     {
         ViewData["Categories"] = Tempdatabase.Sickness;
